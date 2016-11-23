@@ -1,0 +1,30 @@
+<!DOCTYPE>
+<html>
+<head>
+    <title>贺卡列表</title>
+    <script src="__PUBLIC__/Card/cardlist.js"></script>
+    <script src="__PUBLIC__/Home/jquery-2.1.1.min.js"></script>
+    <script>
+        function show_morecards() {
+            $('.morecards').toggle();
+            $('.make').toggle();
+        }
+    </script>
+</head>
+<body>
+<div class="main">
+
+    <for start="1" end="4">
+        <div class="cards">
+            <a href="{:U('index/check')}?cardno={$i}"> <img src="__PUBLIC__/images/cards/{$i}.jpg"/></a>
+        </div>
+    </for>
+    <for start="5" end="10">
+        <div class="morecards" style="display: none;">
+            <a href="{:U('index/check')}?cardno={$i}"> <img src="__PUBLIC__/images/cards/{$i}.jpg"/></a>
+        </div>
+    </for>
+    <a class="make" onclick="show_morecards()">更多...</a>
+</div>
+</body>
+</html>

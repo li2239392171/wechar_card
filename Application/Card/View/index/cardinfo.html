@@ -1,0 +1,26 @@
+<!DOCTYPE>
+<html>
+<head>
+    <title>贺卡信息</title>
+    <script>
+        function cardlist() {
+            window.location='{:U("cardlist")}'
+        }
+    </script>
+</head>
+<body background="{$infos.cardno}.jpg">
+    <div class="main">
+        <div class="headimg">
+            <img src="{$v.headimg}"/>
+        </div>
+        <div class="message">
+            {$infos.message}
+        </div>
+            <!--<audio src="{$v.record_path}" controls="controls"></audio>-->
+        <div class="play">
+            <img src="__PUBLIC__/images/play.jpg"/>
+        </div>
+        <button class="make" onclick="cardlist()">制作新贺卡</button>
+    </div>
+</body>
+</html>

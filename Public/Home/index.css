@@ -1,0 +1,33 @@
+body{
+    text-align: center;
+}
+.main{
+    text-align: center;
+    width:100%;
+    font-size: 24px;
+}
+.main span{
+    color: red;
+    font-size: 26px;
+
+}
+
+.headimg{
+    width:400px;
+    height:450px;
+}
+.address{
+    font-family: "Adobe 楷体 Std R",serif;
+    font-size: larger;
+    margin-bottom: 15px;
+}
+.nickname{
+    font-family: "Adobe 楷体 Std R",serif;
+    font-size: 25px;
+    font-weight: bolder;
+    margin-bottom: 15px;
+}
+#nick{
+    margin-bottom:5px;
+    margin-left:3px;
+}

@@ -1,0 +1,18 @@
+[ 2016-11-18T17:57:25+08:00 ] 202.104.129.55 /test/index.php/card/wechat/callback?code=013KenG127Tb101HPTG12VSnG12KenGj&state=f16dce262bfac65fa0ccb1cb4426fe4a
+ERR: The key "access_token" could not be empty.
+
+[ 2016-11-18T17:57:32+08:00 ] 202.104.129.55 /test/index.php/card/wechat/callback?code=0037RQVX1PkMeW0IKdXX10rUVX17RQVT&state=2a351fd9977c89a45dda312f00e28fb5
+ERR: The key "access_token" could not be empty.
+
+[ 2016-11-18T17:59:04+08:00 ] 202.104.129.55 /test/index.php/card/wechat/callback?code=003KIOEZ02D8k12bucEZ0ujUEZ0KIOEG&state=24a34d12c1a6847159bb59c9910ef47d
+ERR: The key "access_token" could not be empty.
+
+[ 2016-11-18T17:59:58+08:00 ] 202.104.129.55 /test/index.php/card/wechat/callback?code=013CQzBb1yq7ns0pOyEb1MItBb1CQzBS&state=83ef91a412fc9a4836533985291f0b9c
+ERR: The key "access_token" could not be empty.
+
+[ 2016-11-18T18:00:29+08:00 ] 202.104.129.55 /test/index.php/card/wechat/callback?code=0038dUZD1GoBf20ra70E1q0RZD18dUZP&state=805b34a327b6e578cb92a34d1398e562
+ERR: The key "access_token" could not be empty.
+
+[ 2016-11-18T18:05:03+08:00 ] 202.104.129.55 /test/index.php/card/
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'lgq'@'Server190' (using password: YES)
+

@@ -1,0 +1,26 @@
+[ 2016-11-21T09:32:12+08:00 ] 202.104.129.55 /test/index.php/card/wechat/2card/
+ERR: 非法操作:2card
+
+[ 2016-11-21T09:32:31+08:00 ] 101.226.89.122 /test/index.php/card/wechat/2card
+ERR: 非法操作:2card
+
+[ 2016-11-21T09:33:04+08:00 ] 202.104.129.55 /test/index.php/card/wechat/card/
+ERR: 非法操作:card
+
+[ 2016-11-21T09:33:20+08:00 ] 101.226.66.191 /test/index.php/card/wechat/card
+ERR: 非法操作:card
+
+[ 2016-11-21T09:33:39+08:00 ] 202.104.129.55 /test/index.php/card/wechat/card/index
+ERR: 非法操作:card
+
+[ 2016-11-21T09:33:57+08:00 ] 101.226.85.67 /test/index.php/card/wechat/card/index
+ERR: 非法操作:card
+
+[ 2016-11-21T10:56:20+08:00 ] 202.104.129.55 /test/index.php/card/
+ERR: 1146:Table 'test.rid' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `newcard` INNER JOIN users on users.userid = newcard.userid INNER JOIN record on newcard.rid = record,rid  
+
+[ 2016-11-21T10:57:08+08:00 ] 202.104.129.55 /test/index.php/card/
+ERR: 1054:Unknown column 'record.rid' in 'on clause'
+ [ SQL语句 ] : SELECT * FROM `newcard` INNER JOIN users on users.userid = newcard.userid INNER JOIN record on newcard.rid = record.rid  
+

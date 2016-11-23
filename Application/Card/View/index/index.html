@@ -1,0 +1,21 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <title>祝福墙</title>
+    </head>
+    <body>
+        <div class="main">
+            <h2>贺卡列表：</h2>
+            <foreach name="cards" item="v">
+                {$k['nid']}: {$k['message']}-- {$k['userid']}: {$k['nickname']}<br>
+                <div class="message">
+                    <div class="headimg">
+                        <img src="{$v.headimg}"/>
+                    </div>
+                    <!--<audio src="{$v.record_path}" controls="controls"></audio>-->
+                    <span>{$v.message}</span>
+                </div>
+            </foreach>
+        </div>
+    </body>
+</html>

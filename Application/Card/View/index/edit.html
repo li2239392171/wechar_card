@@ -1,0 +1,35 @@
+<!DOCTYPE>
+<html>
+<head>
+    <title>编辑贺卡</title>
+    <script src="__PUBLIC__/Home/jquery-2.1.1.min.js"></script>
+    <script>
+        function record() {
+            window.location="{:U('record')}";
+        }
+
+        function finish(cardno) {
+            var message = document.getElementById('message').value;
+            $.ajax({
+                type:"post",
+                url:"finish",
+                data:"cardno="+cardno+"&message="+message,
+                success:function (data) {
+                    alert("success!!");
+                },
+                error:function(data){
+                    alert("error!");
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+<div class="main">
+    <!--<div class="tip">卡片上的话</div>-->
+    <input class="message" type="text" name="message" id="message" placeholder="写下你的祝福语..."/>
+    <button class="record" type="button" onclick="record({$cardno})">录下想说的话</button>
+    <button class="make" onclick="finish({$cardno})">直接生成贺卡</button>
+</div>
+</body>
+</html>

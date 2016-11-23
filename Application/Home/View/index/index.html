@@ -1,0 +1,26 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <title>贺卡</title>
+        <script type="javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/home/index.css">
+    </head>
+    <body>
+        <div class="main">
+            <h1>节日贺卡</h1>
+            <div><img class="headimg" src="{$data['headimgurl']}"></div>
+            <div class="address">{$data.province}-{$data.city}</div>
+            <div class="nickname">
+                致<span id="nick">{$data.nickname}</span>：<br>
+                祝您节日快乐！<br>
+                开心每一天！
+            </div>
+
+            <div class="sender">
+                来自位于<span>{$address}</span>的朋友<span>李观强（{$name}）</span>的问候。
+            </div>
+            <div><img class="headimg" src="{$headimg}"></div>
+        </div>
+    </body>
+</html>

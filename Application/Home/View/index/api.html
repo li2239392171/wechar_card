@@ -1,0 +1,134 @@
+<script>
+    wx.config({$data});
+    wx.ready(function(){    //页面加载后自动执行！！
+        wx.onMenuShareTimeline({
+            title:'朋友圈',
+            link:'qq.com',
+            imgUrl:'http://wx.jingme.net/test/Public/images/luf.ico',
+            success:function(){
+                console.log("成功分享！");
+            }
+        });
+        wx.onMenuShareAppMessage({
+            title:'朋友',
+            desc:'好诗赠友人',
+            imgUrl:'http://wx.jingme.net/test/Public/images/lo.jpg',
+            success:function(){
+                console.log("已发送！");
+            }
+        });
+        wx.onMenuShareQQ({
+            title:'QQ哈哈',
+            desc:'好诗赠友人',
+            success:function () {
+                window.location.href="https://www.baidu.com";
+            },
+            cancel:function () {
+                console.log("取消QQ分享！")
+            }
+        });
+        wx.onMenuShareWeibo({
+            title:'weibo',
+            desc:'好诗赠友人',
+            success:function () {
+                console.log('分享到微博！')
+            },
+            cancel:function () {
+                console.log("取消weibo分享！")
+            }
+        });
+        wx.onMenuShareQZone({
+            title:'QZone',
+            desc:'好诗赠友人',
+            imgUrl:'http://wx.jingme.net/test/Public/images/lo.jpg',
+            cancel:function () {
+                console.log("取消QZone分享！")
+            }
+        })
+
+    });
+</script>
+<script>
+    //分享接口
+    $(document).ready(function(){
+        $('#share').on('click',function(){
+            wx.onMenuShareTimeline({
+                title:'朋友圈',
+                imgUrl:'http://wx.jingme.net/test/Public/images/luf.ico',
+                success:function(){
+                    console.log("成功分享！");
+                }
+            })
+        });
+
+        $('#friend').on('click',function(){
+            wx.onMenuShareAppMessage({
+                title:'朋友',
+                desc:'好诗赠友人',
+                imgUrl:'http://wx.jingme.net/test/Public/images/lo.jpg',
+                success:function(){
+                    console.log("已发送！");
+                }
+            })
+        });
+
+        $('#test').on('click',function(){
+            wx.checkJsApi({
+                jsApiList:['onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ','onMenuShareWeibo',
+                    'onMenuShareQZone','startRecord','stopRecord','onVoiceRecordEnd','playVoice','chooseImage','previewImage',
+                    'uploadImage','downloadImage'],
+                success:function (res) {
+                    console.log(res);
+                }
+            })
+        });
+    });
+
+
+    //图片接口
+    $(document).ready(function(){
+        $('#choose').on('click',function(){
+            wx.chooseImage({
+                count: 1, // 默认9
+                sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+                sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+                success: function (res) {
+                    var localIds = res.localIds; // 返回选定照片的本地ID列表，localId可以作为img标签的src属性显示图片
+                }
+            });
+        })
+    });
+
+
+    //音频接口
+    $(document).ready(function () {
+        var localId;
+        $('#start').on('click',function () {
+            wx.startRecord();
+        });
+
+        $('#stop').on('click',function () {
+            wx.stopRecord({
+                success: function (res) {
+                    localId = res.localId;
+                }
+            });
+        });
+
+        $('#record').on('click',function () {
+
+            wx.onVoiceRecordEnd({
+                // 录音时间超过一分钟没有停止的时候会执行 complete 回调
+                complete: function (res) {
+                    localId = res.localId;
+                }
+            });
+        });
+
+        $('#play').on('click',function () {
+            wx.playVoice({
+                localId: localId, // 需要播放的音频的本地ID，由stopRecord接口获得
+            });
+        });
+    });
+</script>
